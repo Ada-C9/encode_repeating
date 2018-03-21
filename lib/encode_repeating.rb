@@ -10,9 +10,13 @@ require 'pry'
   1. my_string (input)
   2. index
   3. duplication_count
+
+  Loop count:
+  1.     (my_string.length + 1).times do   (n)
+  2.     (duplication_count - 1).times do  (max of n)
+
+  total: ~2n
 =end
-
-
 
 def encode_repeating(my_string)
   if my_string.nil?
@@ -28,7 +32,7 @@ def encode_repeating(my_string)
         if duplication_count >= 2
           my_string[index + 1] = (duplication_count + 1).to_s
           (duplication_count - 1).times do
-            my_string.slice!((index + 2))
+            my_string.slice!(index + 2)
           end
         end
         duplication_count = 0
