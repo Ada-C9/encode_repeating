@@ -1,6 +1,13 @@
+require 'minitest/skip_dsl'
 require 'minitest/autorun'
 require 'minitest/reporters'
+require 'pry'
+
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
 require_relative '../lib/encode_repeating'
+
+#Note:  ADDED SOME MINITEST REPORTERS, PLUS TEST-SKIPPING ABILITY AND PRY, BUT DID NOT ALTER THE SUBSTANCE OF THE TESTS.
 
 describe "encode repeating" do
   describe "basic tests" do
