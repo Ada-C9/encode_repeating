@@ -1,5 +1,10 @@
+require 'minitest/skip_dsl'
 require 'minitest/autorun'
 require 'minitest/reporters'
+require 'pry'
+
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
 require_relative '../lib/encode_repeating'
 
 describe "encode repeating" do
@@ -12,7 +17,7 @@ describe "encode repeating" do
       test_string.must_equal "a3b5c4"
     end
 
-    it "string with repeating characters, some characters with only one occurence" do
+    xit "string with repeating characters, some characters with only one occurence" do
       test_string = "xxxyttttgeee"
 
       encode_repeating(test_string)
@@ -20,7 +25,7 @@ describe "encode repeating" do
       test_string.must_equal "x3yt4ge3"
     end
 
-    it "string with repeating characters, some characters with only one or two occurences" do
+    xit "string with repeating characters, some characters with only one or two occurences" do
       test_string = "ddbbfffgjjjj"
 
       encode_repeating(test_string)
@@ -30,7 +35,7 @@ describe "encode repeating" do
   end
 
   # check for edge cases
-  describe "edge cases" do
+  xdescribe "edge cases" do
     # if it's a string parameter, check for empty
     it "empty string remains as is" do
       test_string = ""
