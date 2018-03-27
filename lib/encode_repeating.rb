@@ -22,4 +22,6 @@ def encode_repeating(my_string)
       index = m + 1
     end
   end
+
+  return my_string
 end
